@@ -1,0 +1,24 @@
+<head>
+  <script src='calc.js'></script>
+  <link rel='stylesheet' href='calc.css'>
+</head>
+
+<body>
+  <div class='calc-body'>
+  <div class='display'>
+    <div id='result'></div>
+
+    <form id='calc-buttons' action='#'>
+      <input type='number' id='operand1' name='operand1' required>
+      <select id='operator'>
+        <option value='/'>/</option>
+        <option value='*'>*</option>
+        <option value='+'>+</option>
+        <option value='-'>-</option>
+      </select>
+      <input type='number' id='operand2' name='operand2' required>
+      <input type='submit' id='submit-button' value='='>
+    </form>
+
+  </div>
+</body>
