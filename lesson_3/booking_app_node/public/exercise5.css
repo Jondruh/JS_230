@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-student-form,
+.book-schedule {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 5px;
+
+}
+
+.new-student-form {
+    padding: 25px 25px;
+    background-color: rgb(189, 202, 214);
+}
+
+label {
+    font-weight: bold;
+    font-size: 16px;
+}

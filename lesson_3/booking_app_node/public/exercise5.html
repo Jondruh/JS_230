@@ -1,0 +1,20 @@
+<head>
+    <script src='exercise5.js'></script>
+    <link rel='stylesheet' href='exercise5.css'>
+  </head>
+  <body>
+    <h1>Schedules</h1>
+
+    <form class="book-schedule" action="/api/bookings" method="POST">
+
+        <label for="schedule-select">Please select one schedule:</label>
+        <select name="id" id="schedule-select"></select>
+
+        <label for="student-email">Email:</label>
+        <input id="student-email" class='text-input' type="email" name="student_email"/>
+        
+        <input class="button" type="submit" value="Submit"/>
+
+    </form>
+  </body>
+  
