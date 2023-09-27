@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Nodes to Array</title>
+  </head>
+  <body>
+    <header id="1"></header>
+    <main id="2"></main>
+    <footer id="3"></footer>
+  </body>
+</html>
+
+<script>
+
+  function nodesToArr() {
+    return (function recurse(parent, arr) {
+      let parentArr = [parent.tagName, []];
+
+      if (parent.childElementCount > 0) {
+        for (let i = 0; i < parent.childElementCount; i += 1) {
+          recurse(parent.children[i], parentArr[1]);
+        }
+      }
+
+      if (parentArr[0] === 'BODY') {
+        return parentArr;
+      } 
+
+      arr.push(parentArr);
+
+    })(document.body);
+  }
+</script>

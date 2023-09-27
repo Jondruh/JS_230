@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+</html>
+<script>
+// const nodes = ["BODY",[["HEADER",[]],["MAIN",[]],["FOOTER",[]]]];
+
+const nodes = ["BODY",[["DIV",[["DIV",[]],["DIV",[["DIV",[]]]]]],["DIV",[]],["DIV",[["DIV",[]],["DIV",[]],["DIV",[]]]]]];
+
+function arrToNodes(nodes) {
+  const parent = document.createElement(nodes[0]);
+  const children = nodes[1];
+
+  if (children.length === 0) {
+    return parent;
+  } else {
+    for (let i = 0; i < children.length; i += 1) {
+      parent.appendChild(arrToNodes(children[i]));
+    }
+  }
+
+  return parent;
+  // (function createNode(currentNodes, parent) {
+  //   let childTree = currentNodes[1];
+  //   let newNode;
+
+  //   if (currentNodes[0] !== 'BODY') {
+  //     newNode = document.createElement(currentNodes[0])
+  //     parent.appendChild(newNode)
+  //   } else {
+  //     newNode = document.body;
+  //   }
+
+  //   if (childTree.length > 0) {
+  //     for (let i = 0; i < childTree.length; i += 1) {
+  //       createNode(childTree[i], newNode)
+  //     }
+  //   }
+  // })(nodes);
+
+  // return document;
+}
+</script>

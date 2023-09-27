@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Node Swap</title>
+  </head>
+  <body>
+    <div id="1">
+      <div id="4"></div>
+      <div id="5">
+        <div id="6"></div>
+      </div>
+    </div>
+    <div id="2"></div>
+    <div id="3">
+      <div id="7"></div>
+      <div id="8"></div>
+      <div id="9"></div>
+    </div>
+  </body>
+  <script>
+    function nodeSwap(nodeId1, nodeId2) {
+      let node1 = document.getElementById(nodeId1);
+      let node2 = document.getElementById(nodeId2);
+
+      if (!node1 || !node2) {
+        return undefined;
+      }
+
+      //next time use node.contains
+      if (findAllDescendantsById(nodeId1).includes(node2) || 
+          findAllDescendantsById(nodeId2).includes(node1) ) 
+      {
+        return undefined;
+      }
+
+      let nextSib = node2.nextElementSibling;
+      let node2Parent = node2.parentElement;
+      
+      node1.parentElement.insertBefore(node2, node1);
+      if (nextSib) {
+        nextSib.parentElement.insertBefore(node1, nextSib);
+      } else {
+        node2Parent.appendChild(node1);
+      }
+     
+    }
+
+    function findAllDescendantsById(id) {
+      let descendants = [];
+      let parent = document.getElementById(id);
+
+      (function findChildren(par) {
+        let children = par.children;
+        if (children.length > 0) {
+          descendants.push(Array.prototype.slice.call(children)); 
+
+          for (let i = 0; i < children.length; i += 1) {
+            findChildren(children[i]);
+          }
+        }
+      })(parent);
+
+      return descendants.flat();
+    }
+  </script>
+</html>
