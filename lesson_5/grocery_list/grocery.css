@@ -1,0 +1,49 @@
+:root {
+  font-size: 1em;
+  background: #B39491;
+}
+
+body {
+  width: 50%;
+  margin: auto;
+  color: #E5D4D0;
+  background: #E5D4D0;
+  position: relative;
+}
+
+.add-item {
+  background: #6e6362;
+  position: inherit;
+  top: 2em;
+  bottom: 2em;
+  padding: .5em;
+  border-radius: .25em;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.grocery-list {
+  position: inherit;
+  top: 2em;
+  background: #E5D4D0;
+  color: #6e6362;
+}
+
+.grocery-list h1 {
+  background: #6e6362;
+  color: #E5D4D0;
+}
+
+.grocery-input input[type='submit'] {
+  border: none;
+  border-radius: .25em;
+  padding: 15px 30px;
+  margin: 1em;
+  background: #E5D4D0;
+  color: #6e6362;
+}
+
+
