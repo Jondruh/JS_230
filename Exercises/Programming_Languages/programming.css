@@ -1,0 +1,28 @@
+main {
+}
+
+div {
+  font-size: 1rem;
+}
+
+.language-container {
+  margin: 3rem;
+  width: 50%;
+}
+
+h2 {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1rem;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+button {
+  height: 2rem;  
+  border-radius: 0.5rem;
+  border-style: none;
+  background-color: darkgrey;
+}
+
+
