@@ -1,0 +1,56 @@
+ul {
+  list-style: none;
+}
+
+li {
+  margin-top: 0.25rem;
+  margin-bottom: .25rem;
+  height: 2rem;
+  line-height: 2rem;
+  background-color: rgb(241, 199, 159);
+  border-radius: 0.25rem;
+}
+
+button {
+  border-radius: .25rem;
+  border-style: none;
+  background-color: rgb(182, 148, 128);
+  width: 30%;
+  height: 2rem;
+}
+
+.show {
+  position: relative;
+  margin: auto;
+  width: 50%;
+  top: 50%;
+}
+
+.hide {
+  display: none;
+}
+
+.title {
+  text-align: center;
+  float: left;
+  width: 70%;
+}
+
+.delete {
+  float: right;
+}
+
+#todos {
+  width: 50%;
+  display: inline-block;
+  background-color: blanchedalmond;
+  margin: auto;
+  padding: 3rem;
+}
+
+#delete-dialog {
+  background-color: rgb(241, 199, 159);
+  border: 2px black solid;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
