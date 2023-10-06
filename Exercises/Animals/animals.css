@@ -1,0 +1,35 @@
+body, main, figure, figcaption, img {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 0;
+}
+
+figure { 
+  box-sizing: border-box;
+  margin: 2rem;
+  width: 45%;
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+  width: inherit;
+  position: absolute;
+  line-height: 3rem;
+  bottom: 6rem;
+  background-color: darkslategrey;
+  color: lightgray;
+  font-size: 1rem;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
