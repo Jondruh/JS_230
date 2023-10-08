@@ -1,3 +1,19 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+main {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  display: flex;
+}
+
 ul {
   list-style: none;
 }
@@ -14,16 +30,14 @@ li {
 button {
   border-radius: .25rem;
   border-style: none;
-  background-color: rgb(182, 148, 128);
+  background-color: rgb(185, 136, 107);
   width: 30%;
   height: 2rem;
 }
 
 .show {
-  position: relative;
-  margin: auto;
-  width: 50%;
-  top: 50%;
+  position: absolute;
+  /* margin: auto; */
 }
 
 .hide {
@@ -50,7 +64,40 @@ button {
 
 #delete-dialog {
   background-color: rgb(241, 199, 159);
-  border: 2px black solid;
+  border: 1px black solid;
   border-radius: 0.5rem;
   padding: 1rem;
+  top: 50vh;
+  width: 50vw;
+  left: 25vw;
+}
+
+#context-menu {
+  --menu-background: rgb(241, 199, 159);
+  --menu-highlight: rgb(153, 112, 87);
+  background-color: var(--menu-background);
+  box-shadow: 1px 1px 2px 3px rgba(141, 103, 81, 0.712)
+}
+
+#context-menu ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+#context-menu li {
+  background-color: var(--menu-background);
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+#context-menu button {
+  border-radius: .25rem;
+  border-style: none;
+  background-color: var(--menu-background);
+  border-radius: 0;
+  width: 100%;
+  height: 2rem;
 }
