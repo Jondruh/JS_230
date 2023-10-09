@@ -1,0 +1,60 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg: #f3f1eb;
+  --main-color: rgb(78, 143, 103);
+  --secondary-color: rgb(52, 94, 61);
+  font-size: 0;
+}
+
+body {
+  background-color: var(--main-bg);
+}
+
+header {
+  background-color: var(--main-color);
+  font-size: 16px;
+  padding: 20px;
+  margin: 20px;
+}
+
+p {
+  line-height: 0.25rem;
+  font-size: 16px;
+}
+
+h2 {
+  line-height: 0.25rem;
+  font-size: 16px;
+}
+
+#filter-controls {
+  display: flex;
+  gap: 2vw;
+}
+
+#cars-container {
+  margin: 20px;
+}
+
+.car {
+  display: inline-block;
+  padding: 1vw;
+  width: calc(100% / 5);
+  margin-bottom: 15px;
+}
+
+.car img {
+  width: 100%;
+}
+
+.car button {
+  border: none;
+  background-color: var(--main-color);
+  color: var(--main-bg);
+  padding: 0.5vw 1vw;
+}
