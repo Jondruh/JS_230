@@ -9,7 +9,7 @@ const cars = [
 ];
 
 $(function() {
-  fillFilterSelectors();
+  fillFilterSelectors(cars);
   displayCars(cars);
 
   $('#filter-controls').on('submit', event => {
@@ -24,6 +24,7 @@ $(function() {
     })
 
     displayCars(filterCars(cars, filters));
+    fillFilterSelectors(cars, filters);
   });
 });
 
@@ -36,7 +37,6 @@ function filterCars(cars, filters) {
     });
   });
 
-  console.log(filteredCars);
   return filteredCars; 
 }
 
@@ -52,31 +52,35 @@ function displayCars(cars) {
   });
 }
 
-function fillFilterSelectors() {
-  let uniqueCars = { make: [], model: [], year: [], price: [] }
+function fillFilterSelectors(cars, filters = {}) {
+  let seenCategories = { make: [], model: [], year: [], price: [] }
 
-  Object.keys(cars[0]).forEach(category => {
-    if(category !== 'image') {
-      for(let i = 0; i < cars.length; i += 1) {
-        if (!uniqueCars[category].includes(cars[i][category])) {
-          uniqueCars[category].push(cars[i][category]);
-        }
+  $("#filter-controls option[value!='all']").remove(); // resets the filter fields
+
+  cars.forEach(car => {
+    Object.keys(car).forEach(category => {
+      if (category === 'image') { return; }
+
+      if (category === 'model' && filters.make) {
+        if (filters.make !== car[`make`]) { return; }
       }
-    }
-  });
+       
+      if (seenCategories[category].includes(car[category])) {
+        return;
+      }
 
-  Object.keys(uniqueCars).forEach(category => {
-    let $selectElement = $(`#${category}-select`)
-
-    uniqueCars[category].forEach(selectOption => {
+      let $selectElement = $(`#${category}-select`);
       let option = document.createElement('option');
+      option.setAttribute('value', car[category]);
+      option.innerText = car[category];
+      if(car[category] === filters[category]) {
+        option.selected = true;
+      }
 
-      option.setAttribute('value', selectOption);
-      option.innerText = selectOption;
-
+      seenCategories[category].push(car[category]);
+      
       $selectElement.append(option);
-    });
-    
+  });
   });
 
 }
