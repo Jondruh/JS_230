@@ -6,7 +6,39 @@
 
 :root {
     --main-bg: #f3f1eb;
+    --active-bg: #dce9d4;
     --main-color: rgb(78, 143, 103);
     --secondary-color: rgb(52, 94, 61);
     /* font-size: 0; */
+}
+
+#stopwatch-container {
+  background-color: var(--main-color);
+  display: inline-flex;
+  padding: 1.5em 1em;
+}
+
+.display {
+  background-color: var(--secondary-color);
+  color: var(--main-bg);
+  font-family: monospace;
+  font-size: 3rem;
+  margin: 2px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stopwatch-button {
+  width: 5rem;
+  border-style: none;
+  margin: 2px;
+  background-color: var(--main-bg);
+  color: var(--main-color);
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+}
+
+.stopwatch-button:active {
+  background-color: var(--active-bg);
 }
