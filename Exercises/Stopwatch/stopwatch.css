@@ -1,0 +1,12 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:root {
+    --main-bg: #f3f1eb;
+    --main-color: rgb(78, 143, 103);
+    --secondary-color: rgb(52, 94, 61);
+    /* font-size: 0; */
+}
