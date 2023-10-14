@@ -1,0 +1,53 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --container-background: rgb(147, 190, 207);
+  --editor-background: white;
+  --button-active: darkgray;
+  --main-background: rgb(228, 242, 253);
+}
+
+body {
+  background-color: var(--main-background);
+}
+
+.editor-container {
+  width: 80vw;
+  background-color: var(--container-background);
+  padding: 0 1em 1em 1em;
+  margin: auto;
+  margin-top: 3em;
+}
+
+.editor-controls {
+  padding: .5em;
+}
+
+.editor-controls > * {
+  min-width: 2em;
+}
+
+.editor-window:focus {
+  outline: thin dotted;
+}
+
+.editor-window {
+  height: 80vh;
+  background-color: var(--editor-background);
+  border: 1px solid black;
+  padding: 0.25em;
+}
+
+.editor-controls .active {
+  background-color: var(--button-active);
+  border: 1px solid black;
+  font-weight: bold;
+}
