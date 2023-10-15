@@ -7,11 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let form = document.querySelector('#signup-form');
   let formError = document.querySelector('div.form-error-message');
   let credits = document.querySelectorAll('.credit-input');
+  let encodedForm = document.querySelector('.serialized-form-data');
 
   form.addEventListener('submit', e => {
     if (!form.checkValidity()) {
       e.preventDefault();
       formError.classList.add('invalid');    
+    } else {
+      e.preventDefault();
+      let form = new FormData(e.target);
+      let credit = form.getAll('credit');
+      form.set('credit', credit.join(''));
+
+      let encoded = new URLSearchParams(form)
+
+      encodedForm.textContent = encoded.toString();
+      
     }
   });
 
