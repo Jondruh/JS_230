@@ -15,12 +15,21 @@
 }
 
 label {
-  width: 90px;
+  width: 100px;
   text-align: center;
 }
 
 input {
   flex: 1;
+}
+
+#credit {
+  flex: 1;
+  display: inline-block;
+}
+
+#credit input {
+  width: 4em;
 }
 
 .form-error-message {
