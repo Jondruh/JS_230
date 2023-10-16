@@ -1,0 +1,49 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --main-background: #eee;
+}
+
+fieldset {
+  margin-top: 1em;
+}
+
+label {
+  display: block;
+  margin-top: .5em;
+}
+
+label > span {
+  margin-left: .5em;
+}
+
+.quiz-controls {
+  margin-top: 1em;
+}
+
+.quiz-controls > * + * {
+  margin-left: 1em;
+}
+
+.result {
+  padding: .5em;
+  height: 2em;
+}
+
+.result.correct {
+  color: green;
+  border: 1px solid green;
+}
+
+.result.incorrect {
+  color: red;
+  border: 1px solid red;
+}
